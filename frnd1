@@ -1,0 +1,44 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class num1;
+class num2{
+private:
+	int b;
+public:
+	void setb(int val)
+	{
+		b=val;
+	}
+	friend int chandra(num1,num2);
+};
+class num1
+{
+private:
+	int a;
+public:
+	void seta(int val)
+	{
+		a=val;
+	}
+
+	friend int chandra(num1,num2);
+};
+int chandra(num1 ob1,num2 ob2)
+{
+	int sum=ob1.a+ob2.b;
+	int prod=ob1.a*ob2.b;
+	cout<<"addition : "<<sum<<endl;
+	cout<<"mul : "<<prod<<endl;
+	return 0;
+}
+int main()
+{
+	num1 chand;
+	num2 harsh;
+	harsh.setb(5);
+	chand.seta(3);
+	chandra(chand,harsh);
+	getch();
+	return 0;
+}
