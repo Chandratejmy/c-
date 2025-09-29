@@ -1,0 +1,32 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class num2;
+class num1{
+	int a;
+public:
+	void seta(){
+		a=25;
+	}
+	friend float mean(num1,num2);
+};
+class num2{
+	int b;
+public:
+	void setb(){
+		b=30;
+	}
+	friend float mean(num1,num2);
+};
+float mean(num1 harsh,num2 chand){
+	return float((harsh.a+chand.b)/2);
+}
+int main(){
+	num1 x;
+	num2 y;
+	x.seta();
+	y.setb();
+	cout<<"mean:"<<mean(x,y);
+	getch();
+	return 0;
+}
