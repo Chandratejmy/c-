@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+class example{
+    int data1;
+    public:
+    example(){}
+    example(int data0)
+    {
+    data1=data0;
+    }
+    void display()
+    {
+cout<<data1<<"\t";
+    }
+};
+int main()
+{
+    example E1(10);
+    example E2=E1;
+    E1.display();
+    E2.display();
+    return 0;
+}
