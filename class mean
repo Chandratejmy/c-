@@ -1,5 +1,4 @@
 #include<iostream>
-#include<conio.h>
 using namespace std;
 class num2;
 class num1{
@@ -27,6 +26,5 @@ int main(){
 	x.seta();
 	y.setb();
 	cout<<"mean:"<<mean(x,y);
-	getch();
 	return 0;
 }
