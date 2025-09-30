@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+class sample
+{
+    int i;
+    public:
+    void value(int val)
+    {
+        i=val;
+    }
+    void display()
+    {
+        cout<<endl<<"i"<<endl;
+    }
+};
+int main()
+{
+    sample n1;
+    n1.value(20);
+    n1.display();
+    sample n2(n1);
+    n2.display();
+    return 0;
+}
