@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+class example{
+    int data1;
+    public:
+    example(){}
+    example(int data)
+    {
+        data1=data;
+    }
+    example(example &sample)
+    {
+        data1=sample.data1;
+        cout<<"this is copy constructor "<<data1<<"\t";
+    }
+    void display()
+    {
+        cout<<data1<<"\t";
+    }
+};
+int main()
+{
+    example n0(20);
+    example n2=n0;
+    n0.display();
+    n2.display();
+    return 0;
+}
