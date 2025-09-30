@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class student{
+    char stu_name[50];
+    int stu_usn;
+    double stu_fee;
+    public:
+    student();
+    void display();
+};
+student::student()
+{
+    cout<<"enter the name";
+    cin>>stu_name;
+    cout<<"enter the usn";
+    cin>>stu_usn;
+    cout<<"enter the fee";
+    cin>>stu_fee;
+}
+void student::display()
+{
+    cout<<endl<<stu_name<<"\n"<<stu_usn<<"+"<<stu_fee;
+}
+int main()
+{
+    student s;
+    s.display();
+    return 0;
+}
