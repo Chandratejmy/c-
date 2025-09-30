@@ -1,0 +1,23 @@
+ #include<iostream>
+ using namespace std;
+ #include<string>
+ class employe{
+ string name;
+     int salary;
+     public:
+     employe(string x,int y)
+     {
+         name=x;
+         salary=y;
+     }
+    void display()
+    {
+        cout<<"Name :"<<name<<endl;
+        cout<<"salary :"<<salary<<endl;
+    }
+ };
+ int main()
+ {
+     employe e("Chandra Tej",8000000);
+     e.display();
+ }
