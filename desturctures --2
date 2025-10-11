@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class space
+{
+    int x;
+    int y;
+    int z;
+    public:
+    void getdata(int val1,int val2,int val3);
+    void display(void);
+    void operator-();
+};
+void space::getdata(int val1,int val2,int val3)
+{
+    x=val1;
+    y=val2;
+    z=val3;
+}
+void space::display(void)
+{
+    cout<<x<<"";
+    cout<<y<<"";
+    cout<<z<<"\n";
+}
+void space::operator-()
+{
+    x=-x;
+    y=-y;
+    z=-z;
+}
+int main()
+space s;
+s.getdata(20,-10,30);
+cout<<"S:";
+s.display();
+-s;
+cout<<"s:";
+s.display();
+return 0;
+}
