@@ -1,0 +1,30 @@
+ #include<iostream>
+using namespace std;
+int count=0;
+class alpha{
+      public:
+      alpha()
+      {
+            count++;
+            cout<<"\nno of object created :"<<count;
+            }
+      ~alpha()
+      {
+             cout<<"\nno of object destroyed="<<count;
+             --count;
+             }};
+int main()
+{
+    cout<<"enter the main\n";
+    alpha a1,a2,a3,a4;
+    {
+        cout<<"\nenter the value of count--"<<count;
+        alpha a5;
+    }
+      {
+        cout<<"\nenter the value of count=="<<count;
+        alpha a6;
+    }
+    cout<<"\n\n reenter main\n";
+    return 0;
+}
