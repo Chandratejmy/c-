@@ -1,20 +1,19 @@
 #include<iostream>
 using namespace std;
-class space
-{
+class space{
     int x;
     int y;
     int z;
     public:
-    void getdata(int val1,int val2,int val3);
+    void getdata(int z1,int z2,int z3);
     void display(void);
     void operator-();
 };
-void space::getdata(int val1,int val2,int val3)
+void space::getdata(int z1,int z2,int z3)
 {
-    x=val1;
-    y=val2;
-    z=val3;
+    x=z1;
+    y=z2;
+    z=z3;
 }
 void space::display(void)
 {
@@ -29,12 +28,13 @@ void space::operator-()
     z=-z;
 }
 int main()
-space s;
-s.getdata(20,-10,30);
-cout<<"S:";
-s.display();
--s;
-cout<<"s:";
-s.display();
-return 0;
+{
+    space s;
+    s.getdata(30,-20,10);
+    cout<<"s"<<endl;
+    s.display();
+    -s;
+    cout<<"s";
+    s.display();
+    return 0;
 }
