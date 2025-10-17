@@ -1,0 +1,73 @@
+#include<iostream>
+using namespace std;
+class data
+{
+    private:
+    int phno;
+    string name;
+    public:
+    void read()
+    {
+        cout<<"enter the your Name";
+        cin>>name;
+        cout<<"enter your phone number";
+       cin>>phno;
+}
+void show()
+{
+    cout<<"NAME :"<<name<<endl;
+    cout<<"PHONE NO :"<<phno<<endl;
+}
+};
+class student:public data
+{
+    private:
+    int roll_no;
+    string course;
+    public:
+    void reads()
+    {
+        read();
+        cout<<"eenter your roll no\n";
+        cin>>roll_no;
+        cout<<"enter your course :\n";
+        cin>>course;
+    }
+    void shows()
+    {
+        show();
+        cout<<"STUDENT ROll no :"<<roll_no<<endl;
+        cout<<"STUDENT Course :"<<course<<endl;
+    }
+};
+class teacher:public data
+{
+    private:
+    char dept[20];
+    char qual[20];
+    public:
+    void readt()
+    {
+        read();
+        cout<<"mam enter your department :"<<endl;
+        cin>>dept;
+        cout<<"mam pls enter your qualifaction :"<<endl;
+        cin>>qual;
+    }
+    void showt()
+    {
+        show();
+        cout<<"mam dept :"<<dept<<endl;
+        cout<<"mam qualifiction :"<<qual<<endl;
+    }
+};
+int main()
+{
+    teacher t;
+    student s;
+    t.readt();
+    t.showt();
+    s.reads();
+    s.shows();
+    return 0;
+}
