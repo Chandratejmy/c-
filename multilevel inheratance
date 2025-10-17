@@ -1,0 +1,62 @@
+
+#include<iostream>
+using namespace std;
+class student
+{
+ protected:
+ int rollno;
+ string name;
+ public:
+ void get_data(int b,string n);
+ void put_data(void);
+};
+void student::get_data(int b,string n)
+{
+    rollno=b;
+    name=n;
+}
+void student::put_data(void)
+{
+    cout<<"name :"<<name<<endl;
+    cout<<"rollno :"<<rollno<<endl;
+}
+class test:public student
+{
+    protected:
+    float sub1,sub2;
+    public:
+    void get_sub(float k,float l);
+    void put_sub(void);
+};
+void test::get_sub(float k,float l)
+{
+    sub1=k;
+    sub2=l;
+}
+void test::put_sub(void)
+{
+    cout<<"the sub 1 ="<<sub1<<endl;
+    cout<<"the sub 2 ="<<sub2<<endl;
+}
+class result:public test
+{
+    protected:
+    float total;
+    public:
+    void display();
+};
+void result::display()
+{
+    total=sub1+sub2;
+    cout<<"TOTAL ="<<total<<endl;
+}
+int main()
+{
+    result r;
+    r.get_data(96323,"chandra tej");
+       r.put_data();
+    r.get_sub(65,62);
+    r.put_sub();
+    r.display();
+ return 0;
+}
