@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+class B
+{
+    int a;
+    public:
+    int b;
+    void get_ab();
+    int get_a();
+    void show_a();
+};
+void B::get_ab()
+{
+    cout<<"enter the value for a & b:";
+    cin>>a>>b;
+}
+int B::get_a()
+{
+    return 0;
+}
+void B::show_a()
+{
+    cout<<"a="<<a<<"\n";
+}
+class D:public B
+{
+    int c;
+    public:
+    int mul();
+    int display();
+};
+int D::mul()
+{
+    get_ab();
+    c=b*get_a();
+    return 0;
+}
+int D::display()
+{
+    show_a();
+    cout<<"B="<<b<<endl;
+    cout<<"C="<<c<<endl;
+    return 0;
+}
+int main()
+{
+    D d;
+    d.mul();
+    d.display();
+}
