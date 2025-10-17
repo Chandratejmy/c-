@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class base1
+{
+    protected:
+    int rollno,sub1,sub2;
+    public:
+    void get_data()
+    {
+        cout<<"enter the roll no :"<<endl;
+        cin>>rollno;
+        cout<<"enter the sub1 and sub2 :"<<endl;
+        cin>>sub1>>sub2;
+        
+    }
+};
+class base2
+{
+    protected:
+    int sports_marks;
+    public:
+    void get_sports()
+    {
+        cout<<"enter the sports marks :"<<endl;
+        cin>>sports_marks;
+    }
+};
+class result:public base1,public base2
+{
+    protected:
+    int total;
+    public:
+    void display()
+    {
+        total=sub1+sub2+sports_marks;
+        cout<<"ROLL NO :"<<rollno<<endl;
+        cout<<" the total marks  is ="<<total<<endl;
+    }};
+    int main()
+    {
+        result r;
+        r.get_data();
+        r.get_sports();
+        r.display();
+    }
