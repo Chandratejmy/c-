@@ -1,0 +1,68 @@
+    #include<iostream>
+    #define size 5
+    using namespace std;
+    class queus
+    {
+        private:
+        int i,s[10];
+        int rear,front;
+        public:
+        int item;
+        queus()
+        {
+            rear=-1;
+        }
+        front = 0;
+    };
+    void enqueue()
+    {
+        if(rear=size-1)
+        cout<<"queue full\n";
+        else
+        s[++rear]=item;
+    }
+    void dequeue()
+    {
+        if(front>rear)
+        cout<<"stack is on empty\n";
+        else
+        front++;
+    }
+    void display()
+    {
+        if(front>rear)
+        cout<<"queue is empty\n";
+        else
+        {
+            for(i=front;i<=rear;i++)
+            cout<<s[i]<<endl;
+        }}
+
+        int main()
+        {
+            queus ob;
+            int choice;
+            for(;;)
+            {
+                cout<<"1:Enqueue\n2:Dequeue\n3:Display\n4:exit"<<endl;
+                cout<<"enter the choice :";
+                cin>>choice;
+                switch(choice)
+                {
+                    case 1:
+                    cout<<"enter the item :"<<endl;
+                    cin>>ob.item;
+                    ob.enqueue();
+                    break;
+                    case 2:
+                    ob.dequeue();
+                    break;
+                    case 3:
+                    ob.display();
+                    break;
+                    case 4:
+                    default:exit(0);
+                }
+            }
+        }
+
