@@ -1,0 +1,85 @@
+#include <iostream>
+#include <string>
+#include <stack>
+using namespace std;
+
+int prec(char c)
+{
+    if (c == '^')
+        return 3;
+    else if (c == '*' || c == '/')
+        return 2;
+    else if (c == '+' || c == '-')
+        return 1;
+    else
+        return -1;
+}
+
+string infixToPostfix(string s)
+{
+    stack<char> st;
+    string result;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        char c = s[i];
+
+        // 1. Operand (a-z, A-Z, 0-9)
+        if ((c >= 'a' && c <= 'z') ||
+            (c >= 'A' && c <= 'Z') ||
+            (c >= '0' && c <= '9'))
+        {
+            result += c;
+        }
+
+        // 2. Opening bracket
+        else if (c == '(')
+        {
+            st.push(c);
+        }
+
+        // 3. Closing bracket
+        else if (c == ')')
+        {
+            while (!st.empty() && st.top() != '(')
+            {
+                result += st.top();
+                st.pop();
+            }
+            if (!st.empty())  // pop '('
+                st.pop();
+        }
+
+        // 4. Operator
+        else
+        {
+            while (!st.empty() && prec(c) <= prec(st.top()))
+            {
+                if (st.top() == '(') break; // safety
+                result += st.top();
+                st.pop();
+            }
+            st.push(c);
+        }
+    }
+
+    // 5. Pop remaining operators
+    while (!st.empty())
+    {
+        if (st.top() != '(')        // ignore any '(' if mismatched
+            result += st.top();
+        st.pop();
+    }
+
+    return result;
+}
+
+int main()
+{
+    string exp;
+    cout << "Enter the expression: ";
+    cin >> exp;
+
+    cout << "Postfix: " << infixToPostfix(exp) << endl;
+    return 0;
+}
