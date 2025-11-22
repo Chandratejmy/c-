@@ -1,0 +1,81 @@
+#include <iostream>
+using namespace std;
+
+class Queue {
+public:
+    int size = 5;
+    int f, r, count;
+    int s[10]; 
+
+    Queue() {
+        f = 0;
+        r = -1;
+        count = 0;
+    }
+
+    void enqueue(int item) {
+        if (count == size)
+            cout << "Queue full\n";
+        else {
+            r = (r + 1) % size;
+            s[r] = item;
+            count++;
+        }
+    }
+
+    void dequeue() {
+        if (count == 0)
+            cout << "Queue empty\n";
+        else {
+            cout << "Deleted: " << s[f] << endl;
+            f = (f + 1) % size;
+            count--;
+        }
+    }
+
+    void display() {
+        if (count == 0)
+            cout << "Queue empty\n";
+        else {
+            int j = f;
+            for (int i = 0; i < count; i++) {
+                cout << s[j] << " ";
+                j = (j + 1) % size;
+            }
+            cout << endl;
+        }
+    }
+};
+
+int main() {
+    Queue q;
+    int choice, item;
+
+    while (true) {
+        cout << "\n1: push\n2: pop\n3: display\n4: exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            cout << "Enter item: ";
+            cin >> item;
+            q.enqueue(item);
+            break;
+
+        case 2:
+            q.dequeue();
+            break;
+
+        case 3:
+            q.display();
+            break;
+
+        case 4:
+            return 0;
+
+        default:
+            cout << "Invalid choice\n";
+        }
+    }
+}
